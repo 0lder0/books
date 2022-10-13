@@ -23,5 +23,4 @@ function addBook(){
     a.className = 'blue-text text-darken-2'
     a.setAttribute('href', '#')
     deleteBtn.appendChild(a)
-    console.log(x)
 }
