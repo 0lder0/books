@@ -1,13 +1,13 @@
-const form = document.querySelector('form')
-const booksTable = document.querySelector('#books')
-
 const getTitle = document.getElementById('title')
 const getAuthor = document.getElementById('author')
 const getISBN = document.getElementById('isbn')
 const submitBtn = document.getElementById('submit')
+const table = document.getElementById('table')
 
 
 submitBtn.addEventListener('click', addBook)
+table.addEventListener('click', deleteBook)
+
 
 function addBook(){
     let x=document.getElementById('table').insertRow(-1);
@@ -23,4 +23,12 @@ function addBook(){
     a.className = 'blue-text text-darken-2'
     a.setAttribute('href', '#')
     deleteBtn.appendChild(a)
+}
+
+function deleteBook(e) {
+    if (e.target.textContent == 'X') {
+        if (confirm('Are you sure to delete this task?')) {
+            e.target.parentElement.parentElement.remove()
+        }
+    }
 }
